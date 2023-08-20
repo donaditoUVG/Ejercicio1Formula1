@@ -1,32 +1,18 @@
 import java.util.Random;
+
 class Boleto {
+
     private int numTicket, numA, numB;
-    private Ubicacion localidad;
+    private String localidad;
 
-    public Boleto() {
-            
-        
-            Random random = new Random();
-            numTicket = random.nextInt(28000) + 1; //Generación del ticket de 1 a 28,000
-            numA = random.nextInt(15000) + 1; // Número aleatorio A
-            numB = random.nextInt(15000) + 1; // Número aleatorio B
-            localidad = null;
-            }
-
-            public boolean validarAptoCompra() {
-                return (numTicket + numA + numB) % 2 == 1;
-            }
-        
-            public void asignarUbicacion(Ubicacion localidad) {
-                this.localidad = localidad;
-            }
+    Random random = new Random();
 
     // Método Constructor
-    public Boleto(int numTicket, int numA, int numB){
+    public Boleto(int numTicket, int numA, int numB, String localidad){
         this.numTicket = numTicket;
         this.numA = numA;
         this.numB = numB;  
-        
+        this.localidad = localidad;
     }
 
     //m. get & set
@@ -38,4 +24,23 @@ class Boleto {
     
     public int getNumB() { return numB; }
 	public void setNumB(int numB){ this.numB = numB; }
+
+    public String getLocalidad() { return localidad; }
+    public void setLocalidad(String localidad) { this.localidad = localidad; }
+
+    //m. de acción
+    public boolean validarAptoCompra() {
+        numTicket = random.nextInt(28000) + 1;
+        numA = random.nextInt(15000) + 1;
+        numB = random.nextInt(15000) + 1;
+        return (numTicket + numA + numB) % 2 == 1;
+    }
+
+    public String validarEspacio(Comprador comprador1, Ubicacion[] localidades) {
+        String cadena = "";
+            if(comprador1.getCantBoletos() > localidades[0].getEspaciosDisp()) {
+                cadena = cadena + "No hay suficientes espacios disponibles en esta localidad.";
+            }
+        return cadena;
+    }
 }

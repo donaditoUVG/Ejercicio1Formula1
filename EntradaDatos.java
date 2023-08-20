@@ -10,10 +10,9 @@ public class EntradaDatos {
         return nombre;
     }
 
-    public static int pedirDpi(){
+    public static String pedirDpi(){
         System.out.println("Ingrese su numero de DPI: ");
-        int dpi = scanner.nextInt();
-        scanner.nextLine();
+        String dpi = scanner.nextLine();
         return dpi;
     }
 

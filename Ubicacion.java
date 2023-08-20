@@ -8,8 +8,8 @@ public class Ubicacion {
 
     //Métodos Auxiliares
         //Ir reduciendo la cantidad de espacios disponibles.
-    public void disminuirEspacios(int cantidad) {
-        espaciosDisp -= cantidad;
+    public void disminuirEspacios(int cantBoletos) {
+        espaciosDisp -= cantBoletos;
     }
 
     // Métodos
@@ -21,14 +21,12 @@ public class Ubicacion {
     }
 
     //GET & SET
-    public String getLocalidad() {
-        return localidad;
-    }
-    public double getPrecio() {
-        return precio;
-    }
+    public String getLocalidad() { return localidad; }
+    public void setLocalidad(String localidad) { this.localidad = localidad; }
 
-    public int getEspaciosDisp() {
-        return espaciosDisp;
-    }
+    public double getPrecio() { return precio; }
+    public void setPrecio(double precio) { this.precio = precio; }
+
+    public int getEspaciosDisp() { return espaciosDisp; }
+    public void setEspaciosDisp(int espaciosDisp) { this.espaciosDisp = espaciosDisp; }
 }
