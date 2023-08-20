@@ -1,22 +1,31 @@
 public class Comprador {
-    
+    //Atributos
     private String nombre;
-    private int dpi;
+    private String dpi;
     private int cantBoletos;
     private double presupuesto;
 
-    public Comprador(String nombre, int dpi, int cantBoletos, double presupuesto) {
+
+
+    // Método Constructor
+    public Comprador(String nombre, String dpi, int cantBoletos, double presupuesto) {
         this.nombre = nombre;
         this.dpi = dpi;
         this.cantBoletos = cantBoletos;
         this.presupuesto = presupuesto;
     }
 
+    public void restarBoletosComprados(int cantidad) {
+        cantBoletos -= cantidad;
+    }
+
+    //Métodos Get & Set
+
     public String getNombre() { return nombre; }
     public void setNombre(String nombre) { this.nombre = nombre; }
 
-    public int getDpi() { return dpi; }
-    public void setDpi(int dpi) { this.dpi = dpi; }
+    public String getDpi() { return dpi; }
+    public void setDpi(String dpi) { this.dpi = dpi; }
 
     public int getCantBoletos() { return cantBoletos; }
     public void setCantBoletos(int cantBoletos) { this.cantBoletos = cantBoletos; }

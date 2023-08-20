@@ -3,8 +3,14 @@ public class Ubicacion {
     // Atributos
     
     private String localidad;
-    private double precio;
+    private double precio; //En dólares
     private int espaciosDisp; //Espacios Disponibles
+
+    //Métodos Auxiliares
+        //Ir reduciendo la cantidad de espacios disponibles.
+    public void disminuirEspacios(int cantidad) {
+        espaciosDisp -= cantidad;
+    }
 
     // Métodos
 
